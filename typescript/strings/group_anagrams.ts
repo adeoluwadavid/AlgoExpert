@@ -15,7 +15,6 @@
         }else{
             anagrams[sortedWord] = [word]
         }
-       
     }
     return Object.values(anagrams);
   
