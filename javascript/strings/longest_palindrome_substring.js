@@ -22,7 +22,6 @@ function longestPalindromicSubstring(string) {
     return longest;
 }
 function isPalindromes(string) {
-    // console.log(string)
     let start = 0;
     let end = string.length - 1;
     while (start < end) {
