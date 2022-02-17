@@ -1,7 +1,8 @@
 "use strict";
 function reverseWordsInString(string) {
-    // Write your code here.
-    let splitString = split(string, ' ');
+    // Write your code here. 
+    let splitString = split(string, '');
+    console.log('Second:', splitString);
     let finalStringArray = [];
     for (let i = splitString.length - 1; i >= 0; i--) {
         finalStringArray.push(splitString[i]);
@@ -13,7 +14,14 @@ function split(string, separator) {
     var cacheInt = 0;
     var lastWord = '';
     for (let i = 0; i < string.length; i++) {
-        if (string[i] === separator) {
+        if (separator.length === 0) {
+            cache[cacheInt] = string[i];
+            cacheInt++;
+        }
+        else if (separator.length > 0 && separator !== ' ') {
+            cache[cacheInt] = string;
+        }
+        else if (string[i] === separator) {
             cacheInt++;
             lastWord = '';
             cache[cacheInt] = lastWord;
