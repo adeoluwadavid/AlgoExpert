@@ -13,9 +13,9 @@
 function generateDocument(characters, document) {
     // Write your code here.
     for (const c of document) {
-        const docuementFreq = frequency(c, document);
+        const documentFreq = frequency(c, document);
         const characterFreq = frequency(c, characters);
-        if (docuementFreq > characterFreq)
+        if (documentFreq > characterFreq)
             return false;
     }
     return true;

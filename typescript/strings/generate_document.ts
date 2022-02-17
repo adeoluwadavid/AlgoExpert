@@ -12,9 +12,9 @@
  function generateDocument(characters: string, document: string) {
     // Write your code here.
     for( const c of document){
-        const docuementFreq =  frequency(c, document);
+        const documentFreq =  frequency(c, document);
         const characterFreq =  frequency(c, characters)
-        if(docuementFreq > characterFreq) return false
+        if(documentFreq > characterFreq) return false
       }
       return true
   }
