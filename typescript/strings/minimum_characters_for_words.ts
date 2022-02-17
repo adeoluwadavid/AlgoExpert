@@ -30,12 +30,13 @@ function minimumCharactersForWords(words: string[]) {
     let freq = 0;
     let count: any = {};
     for(const doc of document){
-        console.log(doc)
+        //console.log(doc)
 
        for (const d of doc){
-           if(characters === d){
-               freq++
-           }
+        console.log(d)
+        //    if(characters === d){
+        //        freq++
+        //    }
        }
        console.log(freq)
     }
