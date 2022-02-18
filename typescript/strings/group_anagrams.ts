@@ -16,6 +16,7 @@
             anagrams[sortedWord] = [word]
         }
     }
+    console.log(anagrams)
     return Object.values(anagrams);
   
   }
