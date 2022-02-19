@@ -30,8 +30,10 @@ function isValidSubsequence(array: number[], sequence: number[]) {
 function isSubstring(s1: string, s2: string) {
     var M = s1.length;
     var N = s2.length;
+   
     /* A loop to slide pat[] one by one */
     for (var i = 0; i <= N - M; i++) {
+     
         var j;
 
         /* For current index i, check for
