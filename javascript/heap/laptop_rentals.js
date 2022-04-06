@@ -1,5 +1,19 @@
 "use strict";
-class MinHeap {
+function laptopRentals(times) {
+    if (times.length === 0)
+        return 0;
+    times.sort((a, b) => a[0] - b[0]);
+    const timesWhenLaptopIsused = [times[0]];
+    const heap = new MinHeapDualArray(timesWhenLaptopIsused);
+    for (let idx = 1; idx < times.length; idx++) {
+        const currentInterval = times[idx];
+        if (heap.peek()[1] <= currentInterval[0])
+            heap.remove();
+        heap.insert(currentInterval);
+    }
+    return timesWhenLaptopIsused.length;
+}
+class MinHeapDualArray {
     constructor(array) {
         this.heap = this.buildHeap(array);
     }
@@ -15,13 +29,13 @@ class MinHeap {
         while (childOneIdx <= endIdx) {
             const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
             let idxToSwap;
-            if (childTwoIdx !== -1 && heap[childTwoIdx] < heap[childOneIdx]) {
+            if (childTwoIdx !== -1 && heap[childTwoIdx][1] < heap[childOneIdx][1]) {
                 idxToSwap = childTwoIdx;
             }
             else {
                 idxToSwap = childOneIdx;
             }
-            if (heap[idxToSwap] < heap[currentIdx]) {
+            if (heap[idxToSwap][1] < heap[currentIdx][1]) {
                 this.swap(currentIdx, idxToSwap, heap);
                 currentIdx = idxToSwap;
                 childOneIdx = currentIdx * 2 + 1;
@@ -33,7 +47,7 @@ class MinHeap {
     }
     siftUp(currentIdx, heap) {
         let parentIdx = Math.floor((currentIdx - 1) / 2);
-        while (currentIdx > 0 && heap[currentIdx] < heap[parentIdx]) {
+        while (currentIdx > 0 && heap[currentIdx][1] < heap[parentIdx][1]) {
             this.swap(currentIdx, parentIdx, heap);
             currentIdx = parentIdx;
             parentIdx = Math.floor((currentIdx - 1) / 2);
@@ -58,4 +72,3 @@ class MinHeap {
         heap[i] = temp;
     }
 }
-let test = new MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41]);

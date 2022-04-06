@@ -1,7 +1,27 @@
 "use strict";
-class MinHeap {
+function sortKSortedArray(array, k) {
+    const minHeapWithKElements = new MyMinHeap(array.slice(0, Math.min(k + 1, array.length)));
+    let nextIndexToInsertElement = 0;
+    for (let idx = k + 1; idx < array.length; idx++) {
+        const minElement = minHeapWithKElements.remove();
+        array[nextIndexToInsertElement] = minElement;
+        nextIndexToInsertElement++;
+        const currentElement = array[idx];
+        minHeapWithKElements.insert(currentElement);
+    }
+    while (!minHeapWithKElements.isEmpty()) {
+        const minElement = minHeapWithKElements.remove();
+        array[nextIndexToInsertElement] = minElement;
+        nextIndexToInsertElement++;
+    }
+    return array;
+}
+class MyMinHeap {
     constructor(array) {
         this.heap = this.buildHeap(array);
+    }
+    isEmpty() {
+        return this.heap.length === 0;
     }
     buildHeap(array) {
         const firstParentIdx = Math.floor((array.length - 2) / 2);
@@ -58,4 +78,3 @@ class MinHeap {
         heap[i] = temp;
     }
 }
-let test = new MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41]);
