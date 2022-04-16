@@ -13,9 +13,11 @@ let text = "space    is    short  but      tab   is  long"
 let arr = text.split(" ").filter(x => x !== "")
 console.log(arr)
 let finalText = "";
+let finalText2 = "";
 
 for (let item of arr) {
   finalText += item + " "
 }
-
+arr.map(e => finalText2 += e + ' ')
 console.log(finalText)
+console.log(finalText2)
