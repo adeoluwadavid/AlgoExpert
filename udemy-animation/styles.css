@@ -1,0 +1,18 @@
+.container{
+    padding: 50px
+}
+button{
+    background-color: #0f0;
+    border: 1px solid red;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px;
+    opacity: 1;
+    transition: width 1s linear;
+    width:100px
+
+}
+
+button:hover{
+    width: 200px;
+}

@@ -1,0 +1,112 @@
+:root {
+    --primary: #25abd9;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #dcf5ff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  }
+  
+  .card {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 3px 3px 2px 2px #ccc;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    justify-content: space-between;
+    padding: 40px;
+    width: 500px;
+  }
+
+  .form{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+  }
+
+  .input-container{
+      position: relative;
+      width: 90%;
+  }
+  .input-icon{
+      font-size: 25px;
+      position: absolute;
+      left: -45px;
+      top: 70px;
+      transition: color .2s ease-in-out;
+  }
+.input-label{
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.input-label::after{
+    background-color: var(--primary);
+    bottom: -36px;
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    transform: scaleX(0);
+    width: 100%;
+
+    transform-origin:0 0 ;
+    transition: transform .2s ease-in-out;
+}
+
+
+.input-label__name{
+    font-size: 25px;
+    font-family: Montserrat, serif;
+
+    transition:transform .2s ease-in-out, color .2s ease-in-out, font-size .2s ease-in-out;
+}
+.input{
+    border: 0;
+    border-bottom: 2px solid #ddd;
+    font-size: 25px;
+    font-family: Montserrat, serif;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    top:65px
+}
+
+/* Focus */
+.input:focus +  .input-label::after{
+    transform: scaleX(1);
+}
+.input:focus{
+    outline: none;
+}
+
+.input:focus +  .input-label .input-label__name{
+    color: var(--primary);
+    font-size: 20px;
+    transform: translateY(-10px);
+}
+
+.input:focus ~ .input-icon{
+    color: var(--primary);
+}

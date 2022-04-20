@@ -1,0 +1,51 @@
+:root {
+    --primary: #25abd9;
+    --primary-dark: #2090b7;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #dcf5ff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  }
+  
+  .button {
+    background: var(--primary);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 6px 0 var(--primary-dark), 0 5px 15px -4px #0000;
+    color: #fff;
+    cursor: pointer;
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 800;
+    height: 50px;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 150px;
+
+    transition: box-shadow .2s ease-in,margin-top .2s ease, opacity .2s ease-in-out;
+  }
+
+  .button:hover, .button:focus{
+      opacity: .9;
+      outline: 0;
+  }
+
+  .button:active{
+      box-shadow: none;
+      margin-top: 6px
+  }
+  
+  

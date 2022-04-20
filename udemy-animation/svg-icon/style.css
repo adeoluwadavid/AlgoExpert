@@ -1,0 +1,34 @@
+:root {
+    --primary: #25abd9;
+  }
+  
+  * {
+      box-sizing: border-box;
+  }
+  
+  body {
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .container {
+      align-items: center;
+      display: flex;
+      height: 100vh;
+      justify-content: space-between;
+      margin: auto;
+      width: 1000px;
+  }
+  .icon{
+      width : 200px;
+  }
+  .icon path{
+      fill: transparent;
+      stroke: #777;
+      stroke-width: 10;
+  }
+  /* Hover */
+  
+  /* Keyframes */
+  

@@ -1,0 +1,113 @@
+:root {
+    --primary: #25abd9;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    align-items: center;
+    background-color: #333;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 350px;
+    justify-content: space-between;
+    width: 500px;
+  }
+  
+  .burger {
+    display: flex;
+    flex-direction: column;
+    height: 35px;
+    position: relative;
+    width: 50px;
+  }
+  .burger__inner{
+    background-color: var(--primary);
+    height: 5px;
+    width: 50px;
+    display: block;
+    top: 0;
+    position: absolute;
+    transition: transform .1s;
+}
+.burger__inner--two{
+    top: 15px;
+}
+.burger__inner--three{
+    top:30px
+}
+  
+  /* Hamburger One */
+  .burger--one .burger__inner--two{
+      transition: opacity .1s, transform .1s;
+  }
+  .burger--two .burger__inner--one,
+  .burger--two .burger__inner--three{
+      transition: transform .1s,  top .1s .2s
+  }
+
+  
+  /* Hamburger Two */
+  
+  /* Hamburger Three */
+  .burger--three .burger__inner--one,
+  .burger--three .burger__inner--three{
+      transition: transform .2s ease-in-out, top .1s .2s;
+  }
+  .burger--three .burger__inner--two{
+      transition-delay: .1s
+  }
+  /* Active States */
+  
+  /* Hamburger One */
+  .burger--active.burger--one .burger__inner--one{
+      transform: translateY(15px) rotate(45deg)
+  }
+  .burger--active.burger--one .burger__inner--two{
+      opacity: 0;
+      transform: translateX(-100%)
+  }
+  .burger--active.burger--one .burger__inner--three{
+      transform: translateY(-15px) rotate(-45deg)
+  } 
+  
+  /* Hamburger Two */
+  .burger--active.burger--two .burger__inner--one{
+      top: 15px;
+      transform: rotate(45deg);
+      transition: top .1s, transform .1s .2s;
+  }
+  .burger--active.burger--two .burger__inner--two{
+      transform: scale(0);
+  }
+  .burger--active.burger--two .burger__inner--three{
+    top: 15px;
+      transform: rotate(-45deg);
+      transition: top .1s, transform .1s .2s;
+  }
+  /* Hamburger Three */
+
+  .burger--active.burger--three .burger__inner--one{
+      top: 15px;
+      transform: rotate(135deg);
+      transition: top .1s, transform .2s ease-in-out .2s;
+  }
+  .burger--active.burger--three .burger__inner--two{
+     transform: scale(0);
+  }
+  .burger--active.burger--three .burger__inner--three{
+      top: 15px;
+      transform: rotate(225deg);
+      transition: top .1s, transform .2s ease-in-out .2s;
+  }

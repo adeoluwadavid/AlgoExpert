@@ -1,0 +1,181 @@
+:root {
+    --primary: #25abd9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    align-items: center;
+    background: #dcf5ff no-repeat 50% / cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.section:nth-of-type(even) {
+    background-color: #eee;
+}
+
+.loading>div {
+    background-color: var(--primary);
+}
+
+/* Individual Styles */
+
+/* Circles */
+.loading__circle {
+    animation: circle 2s ease-in-out infinite;
+    border-radius: 50%;
+    height: 50px;
+    opacity: .7;
+    position: absolute;
+    width: 50px;
+}
+
+.loading__circle--2 {
+    animation-delay: 1s;
+}
+
+
+/* Bars */
+.loading--2 {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+.loading__bar{
+    animation: bar 1s ease-in-out infinite;
+    height: 60px;
+    opacity: .7;
+    width: 8px;
+}
+.loading__bar--2{
+    animation-delay: .2s;
+}
+.loading__bar--3{
+    animation-delay: .4s;
+}
+.loading__bar--4{
+    animation-delay: .6s;
+}
+.loading__bar--5{
+    animation-delay: .8s;
+}
+
+/* Dots */
+.loading--3{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+.loading__dot{
+    animation: dot 1s ease-in-out infinite;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+.loading__dot--2{
+    animation-delay: .2s;
+}
+.loading__dot--3{
+    animation-delay: .4s;
+}
+
+/* Dots Sweep */
+.loading--4{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+.loading__dot-sweep{
+    animation: dotSweep 2s ease-in-out infinite;
+    height: 15px;
+    width: 15px;
+    border-radius: 5px;
+}
+
+.loading__dot-sweep--2{
+    animation-delay: .1s;
+}
+.loading__dot-sweep--3{
+    animation-delay: .2s;
+}
+.loading__dot-sweep--4{
+    animation-delay: .3s;
+}
+.loading__dot-sweep--5{
+    animation-delay: .4s;
+}
+/* Keyframes */
+@keyframes circle {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes bar {
+    0%{
+        transform: scaleY(.5);
+    }
+    25%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(.5);
+    }
+    100%{
+        transform: scaleY(.5);
+    }
+}
+
+@keyframes dot {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    40%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    80%{
+        transform: scale(0);
+    }
+    
+    100%{
+        transform: scale(0);
+    }
+}
+
+@keyframes dotSweep{
+    0%,20%{
+        opacity: 0;
+        transform: translateX(-400%);
+    }
+    30%,70%{
+        opacity: 0.75;
+        transform: translateX(0);
+    }
+    80%,100%{
+        opacity: 0;
+        transform: translateX(400%);
+    }
+}

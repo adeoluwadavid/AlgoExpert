@@ -1,0 +1,56 @@
+/* Hamburger */
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    height: 35px;
+    position: relative;
+    width: 50px;
+  }
+  
+  .burger__inner {
+    background-color: #fff;
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    transition: transform .1s;
+    width: 50px;
+  }
+  
+  .burger__inner--two {
+      top: 15px;
+  }
+  
+  .burger__inner--three {
+      top: 30px;
+  }
+  
+  .burger__inner--one,
+  .burger__inner--three {
+      transition: transform .2s ease-in-out, top .1s .2s;
+  }
+  
+  .burger__inner--two {
+      transition-delay: .1s;
+  }
+  
+  /* Active States */
+  
+  /* Hamburger */
+  
+  .burger--active .burger__inner--one {
+      top: 15px;
+      transform: rotate(135deg);
+      transition: top .1s, transform .2s ease-in-out .2s;
+  }
+  
+  .burger--active .burger__inner--two {
+      transform: scale(0);
+  }
+  
+  .burger--active .burger__inner--three {
+      top: 15px;
+      transform: rotate(225deg);
+      transition: top .1s, transform .2s ease-in-out .2s;
+  }

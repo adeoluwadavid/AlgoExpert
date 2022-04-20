@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    animation: gradient 20s ease-in-out infinite;
+    background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) 50% / 200% 200%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.header{
+    font-family: Montserrat, serif;
+    font-size: 50px;
+    color: #fff;
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0%;
+    }
+    50%{
+        background-position: 100%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}

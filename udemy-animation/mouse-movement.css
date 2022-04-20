@@ -1,0 +1,47 @@
+:root {
+    --primary: #25abd9;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    align-items: center;
+    background-color: #333;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 350px;
+    justify-content: center;
+    width: 500px;
+  }
+
+  .button{
+    background: none;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, serif;
+    font-size: 20px;
+    padding: 20px 50px;
+    position: relative;
+  }
+  .button__border{
+    border: 2px solid var(--primary);
+    display: block;
+    height: 100%;
+    left:0;
+    position: absolute;
+    top:0;
+    transition: transition .1s ease;
+    width: 100%
+  }
