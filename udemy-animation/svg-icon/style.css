@@ -28,7 +28,89 @@
       stroke: #777;
       stroke-width: 10;
   }
+.icon__svg--tree path{
+    stroke-dasharray: 1860;
+    stroke-dashoffset: 0;
+}
+.icon__svg--bolt path{
+    stroke-dasharray: 1550;
+    stroke-dashoffset: 0;
+}
+.icon__svg--glass path{
+    stroke-dasharray: 2100;
+    stroke-dashoffset: 0;
+}
   /* Hover */
+  .icon__svg--tree:hover path{
+      animation: treeAnim 2s linear forwards;
+  }
+  .icon__svg--bolt:hover path{
+      animation: boltAnim 2s linear forwards;
+  }
+  .icon__svg--glass:hover path{
+      animation: boltAnim 2s linear forwards;
+  }
   
   /* Keyframes */
+  @keyframes treeAnim {
+      0%{
+          stroke-dashoffset: 0;
+      }
+      40%{
+        stroke-dashoffset: 1860;
+        stroke: #777;
+      }
+      41%{
+          stroke: var(--primary);
+      }
+      80%{
+          stroke-dashoffset: 3720;
+      }
+      100%{
+          stroke: var(--primary);
+          fill: var(--primary);
+          stroke-dashoffset: 3720;
+      }
+  }
+
+  @keyframes boltAnim {
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+      stroke-dashoffset: 1550;
+      stroke: #777;
+    }
+    41%{
+        stroke: var(--primary);
+    }
+    80%{
+        stroke-dashoffset: 3100;
+    }
+    100%{
+        stroke: var(--primary);
+        fill: var(--primary);
+        stroke-dashoffset: 3100;
+    }
+  }
+  @keyframes glassAnim {
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+      stroke-dashoffset: 2100;
+      stroke: #777;
+    }
+    41%{
+        stroke: var(--primary);
+    }
+    80%{
+        stroke-dashoffset: 4200;
+    }
+    100%{
+        stroke: var(--primary);
+        fill: var(--primary);
+        stroke-dashoffset: 4200;
+    }
+  }
   

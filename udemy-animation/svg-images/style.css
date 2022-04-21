@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+.svg{
+    height: 50%;
+}
+
+/* Items to animate */
+.svg__sun{
+    animation: sunAnim 2s ease-in-out infinite alternate;
+    transform: scale(.8);
+    transform-origin: 80% 20%;
+    
+}
+.svg__eye{
+    animation: eyesAnim 5s ease-in-out infinite;
+}
+.svg__note{
+    opacity: 1;
+    animation: noteAnim 1s ease-in-out infinite alternate;
+}
+.svg__note--large{
+    animation-delay: .5s;
+}
+/* Keyframes */
+@keyframes sunAnim {
+    100%{
+        transform: scale(.9);
+    }
+}
+
+@keyframes eyesAnim {
+    20%{
+        transform: translateX(30px);
+    }
+    40%{
+        transform: translateX(30px);
+    }
+    60%{
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes noteAnim {
+    100%{
+        opacity: 0;
+    }
+}

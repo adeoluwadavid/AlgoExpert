@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 25px 100px 100px;
+}
+
+.main-header {
+    font-size: 30px;
+    margin-bottom: 75px;
+    text-align: center;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto auto 50px;
+    max-width: 1250px;
+}
+
+.content--reverse {
+    flex-direction: row-reverse;
+}
+
+.content__text {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.content--reverse .content__text {
+    margin-left: 50px;
+    margin-right: 0;
+}
+
+.content__image {
+    flex: 1;
+    height: 300px;
+    width: 500px
+}
+
+.content__image--one {
+    background: url('https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') no-repeat 50% / cover;
+}
+
+.content__image--two {
+    background: url('https://images.pexels.com/photos/276374/pexels-photo-276374.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') no-repeat 50% / cover;
+}
+
